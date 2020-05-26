@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" data-emoji="🐱" type="image/png">
 <title>Oliver's very own website!!</title>
   <meta name="description" content="Cat Photos">
   <meta name="author" content="Connor and Ashani">
@@ -137,6 +138,23 @@ function myFunction(imgs) {
   expandImg.src = imgs.src;
   imgText.innerHTML = imgs.alt;
   expandImg.parentElement.style.display = "block";
+}
+const favicon = document.querySelector("link[rel=icon]");
+
+if (favicon) {
+  const emoji = favicon.getAttribute("data-emoji");
+
+  if (emoji) {
+    const canvas = document.createElement("canvas");
+    canvas.height = 64;
+    canvas.width = 64;
+
+    const ctx = canvas.getContext("2d");
+    ctx.font = "64px serif";
+    ctx.fillText(emoji, 0, 64);
+
+    favicon.href = canvas.toDataURL();
+  }
 }
 </script>
 
