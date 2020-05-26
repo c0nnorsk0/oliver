@@ -2,7 +2,7 @@
 <html>
 <head>
  
-<link rel="icon" value="🐱" />
+<link rel="icon" data-emoji="🐱" type="image/png">
 <title>Welcome</title>
 
 <style type="text/css" media="screen">
@@ -72,7 +72,25 @@ button:hover::before{
 }
 
 </style>
+<script>
+ const favicon = document.querySelector("link[rel=icon]");
 
+if (favicon) {
+  const emoji = favicon.getAttribute("data-emoji");
+
+  if (emoji) {
+    const canvas = document.createElement("canvas");
+    canvas.height = 64;
+    canvas.width = 64;
+
+    const ctx = canvas.getContext("2d");
+    ctx.font = "64px serif";
+    ctx.fillText(emoji, 0, 64);
+
+    favicon.href = canvas.toDataURL();
+  }
+}
+</script>
 </head>
 <body>
 
