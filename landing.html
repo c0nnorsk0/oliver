@@ -1,0 +1,84 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+
+<style type="text/css" media="screen">
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500);
+
+*{font-family:'Work Sans', sans-serif;}
+body{background-color:#fff;height:99vh}
+
+.container-main{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button{
+  position:relative;
+  display:block;
+    z-index:-10;
+  margin:0 auto;
+  padding:0;
+  height:100px;
+  width:150px;
+  color:#555;
+  background: #fff;
+  overflow:hidden;
+  border-bottom:2px solid #555;
+  border-left:none;
+  border-right:none;
+  border-top:none;
+}
+button p{
+  z-index:2;
+  color:#555;
+  font-size:26px;
+  line-height:100px;
+  padding:0 !important;
+  margin:0 !important;
+  transition:.4s ease color;
+}
+
+button::before{
+  content:"";
+    z-index:-1;
+  position:absolute;
+  display:block;
+  height:2px;
+  padding:0;
+  width:150px;
+  margin-left:-150px;
+  background: #555;
+    transition:.4s ease margin .5s,.5s ease height;
+}
+
+button:hover p, button p:hover{
+  color:#fff;
+  transition:.2s ease color .5s;
+}
+
+button:hover::before{
+  height:100px;
+  width:150px;
+  margin-left:0px;
+  transition:.5s ease margin, .2s ease height .5s;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container-fluid container-main">
+
+  <button><p>Enter</p></button>
+
+</div>
+
+</body>
+</html> 
