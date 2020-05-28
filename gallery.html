@@ -9,6 +9,8 @@
 <meta name="author" content="Connor and Ashani">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 
 <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
@@ -39,18 +41,15 @@ if (favicon) {
     favicon.href = canvas.toDataURL();
   }
 }
-$(window).load(function () {
-    $(".trigger_popup_fricc").click(function(){
-       $('.hover_bkgr_fricc').show();
-    });
-    $('.hover_bkgr_fricc').click(function(){
-        $('.hover_bkgr_fricc').hide();
-    });
-    $('.popupCloseButton').click(function(){
-        $('.hover_bkgr_fricc').hide();
-    });
-});
+// Get the modal
+var modal = document.getElementById('id01');
 
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 </script>
 
   <style>
@@ -124,64 +123,109 @@ $(window).load(function () {
   		padding: 15px;
   		text-align: center;
 	}
-/* Popup box BEGIN */
-    .hover_bkgr_fricc{
-        background:rgba(0,0,0,.4);
-        cursor:pointer;
-        display:none;
-        height:100%;
-        position:fixed;
-        text-align:center;
-        top:0;
-        width:100%;
-        z-index:10000;
+
+*, *:before, *:after { box-sizing: border-box; }
+body { height: 100vh; background: #ccc; overflow: hidden; }
+
+.modal-container {
+  margin: 60px auto;
+  padding-top: 0px;
+  position: relative;
+  width: 160px;    
+  .modal-btn {
+    display: block;
+    margin: 0 auto;      
+    color: #fff;  
+    width: 160px;
+    height: 50px;    
+    line-height: 50px;    
+    background: #446CB3;
+    font-size: 22px;       
+    border: 0;
+    border-radius: 3px;  
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 5px 5px -5px #333;  
+    transition: background 0.3s ease-in;
+    &:hover { background: #365690; }
+  }
+  .modal-content, 
+  .modal-backdrop {
+    height: 0; 
+    width: 0; 
+    opacity: 0;    
+    visibility: hidden;
+    overflow: hidden; 
+    cursor: pointer;
+    transition: opacity 0.2s ease-in; 
+  }
+  .modal-close {
+    color: #aaa;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding-top: 3px;
+    background: #fff;
+    font-size: 16px;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    &:hover { color: #333; }        
+  }      
+  .modal-content-btn {
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    bottom: 20px;
+    right: 30px;
+    background: #446CB3;
+    color: #fff;
+    width: 50px;
+    border-radius: 2px;
+    font-size: 14px;
+    height: 32px;
+    padding-top: 9px;
+    font-weight: normal;
+    &:hover { color: #fff; background: #365690; }
+  }
+  #modal-toggle {
+    display: none;  
+    &.active ~ .modal-backdrop,
+    &:checked ~ .modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 9;
+      visibility: visible;
+      opacity: 1;      
+      transition: opacity 0.2s ease-in; 
     }
-    .hover_bkgr_fricc .helper{
-        display:inline-block;
-        height:100%;
-        vertical-align:middle;
-    }
-    .hover_bkgr_fricc > div {
-        background-color: #fff;
-        box-shadow: 10px 10px 60px #555;
-        display: inline-block;
-        height: auto;
-        max-width: 551px;
-        min-height: 100px;
-        vertical-align: middle;
-        width: 60%;
-        position: relative;
-        border-radius: 8px;
-        padding: 15px 5%;
-    }
-    .popupCloseButton {
-        background-color: #fff;
-        border: 3px solid #999;
-        border-radius: 50px;
-        cursor: pointer;
-        display: inline-block;
-        font-family: arial;
-        font-weight: bold;
-        position: absolute;
-        top: -20px;
-        right: -20px;
-        font-size: 25px;
-        line-height: 30px;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-    }
-    .popupCloseButton:hover {
-        background-color: #ccc;
-    }
-    .trigger_popup_fricc {
-        cursor: pointer;
-        font-size: 20px;
-        margin: 20px;
-        display: inline-block;
-        font-weight: bold;
-    }
-/* Popup box BEGIN */
+    &.active ~ .modal-content,
+    &:checked ~ .modal-content {
+      opacity: 1;
+      background-color: #fff;
+      max-width: 400px;
+      width: 400px;
+      height: 280px;
+      padding: 10px 30px;
+      position: fixed;
+      left: calc(50% - 200px);
+      top: 12%;
+      border-radius: 4px;
+      z-index: 999;
+      pointer-events: auto;
+      cursor: auto;
+      visibility: visible;      
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);  
+      @media (max-width: 400px) { left: 0; }                   
+    }  
+  }
+}
 
   </style>
   
@@ -273,18 +317,19 @@ $(window).load(function () {
 		</div>
   		<div class="content">
     		<div class="gallery">
-  				<a class="trigger_popup_fricc">
+  				<a target="_blank" href="img_5terre.jpg">
     				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
   				</a>
-                    <div class="hover_bkgr_fricc">
-                        <span class="helper"></span>
-                    <div>
-                    <div class="popupCloseButton">&times;</div>
-                        <p><video id="player" playsinline controls data-poster="/path/to/poster.jpg"><source src="/path/to/video.mp4" type="video/mp4" /><source src="/path/to/video.webm" type="video/webm" />
-                        </p>
-        </div>
-</div>
+			</div>
+		</div>
 
+        <div class="content">
+    		<div class="gallery">
+<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160/beautiful+kitten.jpg" onclick="document.getElementById('modal01').style.display='block'" class="w3-hover-opacity">
+
+<div id="modal01" class="w3-modal w3-animate-zoom" onclick="this.style.display='none'">
+  <img class="w3-modal-content" src="img_snowtops.jpg">
+</div>
 			</div>
 		</div>
 
