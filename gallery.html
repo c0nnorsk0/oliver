@@ -1,139 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
+
+<header>
+<title>Oliver and Miso</title>
 <link rel="icon" data-emoji="🐱" type="image/png">
 <title>Oliver's very own website!!</title>
-  <meta name="description" content="Cat Photos">
-  <meta name="author" content="Connor and Ashani">
+<meta name="description" content="Cat Photos">
+<meta name="author" content="Connor and Ashani">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  font-family: Arial;
-}
-
-/* The grid: Four equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
-}
-
-/* Style the images inside the grid */
-.column img {
-  opacity: 0.8; 
-  cursor: pointer; 
-}
-
-.column img:hover {
-  opacity: 1;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* The expanding image container */
-.container {
-  position: relative;
-  display: none;
-}
-
-/* Expanding image text */
-#imgtext {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  color: white;
-  font-size: 20px;
-}
-
-/* Closable button inside the expanded image */
-.closebtn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: white;
-  font-size: 35px;
-  cursor: pointer;
-}
-body {
-  background-image: url("images/bg-cat.png");
-  background-repeat: repeat;
-}
-</style>
-</head>
-<body>
-
-<div style="text-align:center">
-  <h2>oliver</h2>
-  <p>Click on the images below:</p>
-</div>
-
-<!-- The four columns -->
-<div class="row">
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://www.humanesociety.org/sites/default/files/styles/2000x950/public/2018/06/cat-217679.jpg" alt="Grey Cat" style="width:100%" onclick="myFunction(this);">
-  </div>
-</div>
-
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:100%">
-  <div id="imgtext"></div>
-</div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 
 <script>
 function myFunction(imgs) {
@@ -162,5 +38,143 @@ if (favicon) {
 }
 </script>
 
+  <style>
+  	body {
+    background-image: url("https://media.istockphoto.com/vectors/cat-seamless-pattern-kitten-vector-scarf-isolated-background-repeat-vector-id959462762");
+    repeat: repeat-x, repeat-y;
+    }
+    div.holder {
+    	border-radius: 25px;
+    	margin: auto;
+		padding: 10px;
+    	width: 100%;
+    	height: 800px;
+    	background: #00BFFF;
+    }
+    div.header {
+        text-align: center;
+    	text-shadow: 2px 2px 5px blue;
+        letter-spacing: 5px;
+        height: 70px;
+        font-size: 50px;
+        font-family: "Sofia"
+    }
+    
+    div.content {
+    }
+    
+    div.gallery {
+  		margin: 5px;
+  		border: 5px;
+        border-radius: 15px;
+  		float: left;
+  		width: 180px;
+	}
+
+	div.gallery img {
+    	width: 100%;
+ 		height: auto;
+        border-radius: 10px;
+	}
+
+	div.desc {
+  		padding: 15px;
+  		text-align: center;
+	}
+  </style>
+  
+</header>
+
+
+<body>
+<div class="holder">
+	<div class="header">
+    Oliver Cat
+    </div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+  		<div class="content">
+    		<div class="gallery">
+  				<a target="_blank" href="img_5terre.jpg">
+    				<img src="http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s160 /beautiful+kitten.jpg" alt="Cat" width="600" height="400">
+  				</a>
+			</div>
+		</div>
+</div>
 </body>
-</html>
+</html> 
