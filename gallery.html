@@ -74,6 +74,30 @@ body {
   filter: grayscale(100%);
 }
 
+.rotateimg180 {
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.rotateimg-90 {
+  -webkit-transform:rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}  
+
+.rotateimg90 {
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+  
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
@@ -103,7 +127,7 @@ body {
 <!-- Photo Grid -->
 <div class="row"> 
   <div class="column">
-    <img src="/images/60865070398__FD04CFC9-DCA8-4E1D-9304-66396CC13C6C.jpeg" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
+    <img src="/images/60865070398__FD04CFC9-DCA8-4E1D-9304-66396CC13C6C.jpeg" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity, rotateimg-90">
     <img src="/images/6E47151D-A7B3-4222-9EE8-0965469B1266.jpg" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
     <img src="/images/60865072902__040ADD33-CF8D-4E3E-BEA1-A218EE71E81D.jpeg" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
     <img src="/images/IMG_2750.JPG" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
@@ -120,7 +144,7 @@ body {
   </div>
   <div class="column">
     <img src="/images/IMG_2979.JPG" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
-    <img src="/images/60867522883__72B24E77-01E7-42DD-9088-813347AF85A0.JPG" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
+    <img src="/images/60867522883__72B24E77-01E7-42DD-9088-813347AF85A0.JPG" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity, rotateimg180">
     <img src="/images/IMG_2877" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
     <img src="/images/IMG_2851.JPG" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
     <img src="/images/IMG_2811.jpg" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
